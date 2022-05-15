@@ -1,0 +1,16 @@
+program nieskonczona;
+
+#include("stdlib.hhf");
+
+static
+	zmienna: int8;
+
+begin nieskonczona;
+	
+	forever
+		stdout.put("Podaj pewna liczbe z przedzialu -128 do 127: ");
+		stdin.get(zmienna);
+		breakif(zmienna == 1);
+	endfor;
+	
+end nieskonczona;

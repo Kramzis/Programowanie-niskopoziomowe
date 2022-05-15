@@ -1,0 +1,16 @@
+program powtorz;
+
+#include("stdlib.hhf");
+
+static
+	zmienna: int8;
+
+begin powtorz;
+	
+	repeat
+		stdout.put("Podaj pewna liczbe z przedzialu -128 do 127: ");
+		stdin.get(zmienna);
+	until(zmienna == 1);
+	
+end powtorz;
+

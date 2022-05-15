@@ -1,0 +1,21 @@
+program tryex;
+
+#include("stdlib.hhf");
+
+static
+	zmienna: int16;
+
+begin tryex;
+forever
+	try 
+		stdout.put("Wprowadz liczbe: ");
+		stdin.get(zmienna);
+	exception(ex.ValueOutOfRange)
+		stdout.put("Wartosc spoza zakresu, wprowadz jeszcze raz: ");
+	exception(ex.ConversionError)
+		stdout.put("Niepoprawna wartosc, wprowadz jeszcze raz: ");
+	endtry;	
+	breakif(zmienna == 0 && zmienna >= -128 && zmienna <= 127);
+endfor;
+
+end tryex;

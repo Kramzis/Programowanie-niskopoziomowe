@@ -1,0 +1,27 @@
+program rozszerzenie;
+
+#include("stdlib.hhf");
+
+static
+	z1: int8;
+	z2:	int16;
+	z3: int32;
+	
+begin rozszerzenie;
+
+	stdout.put("Podaj liczbe calkowita od -128 do 127: ");
+	stdin.get(z1);
+	stdout.put("Rozszerzanie znakiem (instrukcje rozszerzenia): ", nl);
+	mov(z1, al);
+	stdout.put("Wprowadzono: ", z1);
+	stdout.put ( " (", al, "H)", nl);
+	cbw();
+	mov(ax,z2);
+	stdout.put ("Rozszerzenie do 16-bitow: ", z2);
+	stdout.put (" (", ax, "H)", nl);
+	movsx(z2,edx);
+	mov(edx,z3);
+	stdout.put ("Rozszerzenie do 32-bitow: ", z3);
+	stdout.put (" (", edx, "H)", nl);
+	
+end rozszerzenie;
